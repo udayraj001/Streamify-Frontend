@@ -1,0 +1,257 @@
+@import url("./utils.css");
+@import url("./index-responsive.css");
+@import url("./index-components.css");
+body{
+    /* display: grid; */
+    grid-template-columns:25% 50% 25%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(11, 11, 15);
+    color: white;
+}
+
+.App{
+    /* grid-template-columns:25% 50% 25%; */
+    display:grid;
+    grid-template-columns:25% 50% 25%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(11, 11, 15);
+    color: white;
+}
+/* body *{
+    border: 1px solid red;
+} */
+aside, main{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+main::-webkit-scrollbar,
+main::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-button,
+aside::-webkit-scrollbar,
+aside::-webkit-scrollbar-thumb,
+aside::-webkit-scrollbar-button{
+    display: none;
+}
+
+.main-content{
+    margin: 30px;
+}
+
+main nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main nav .logo{
+    width: 20px;
+    overflow: hidden;
+}
+
+main nav .logo > img{
+    width: inherit;
+}
+
+.menu--disabled{
+    display: none;
+}
+
+main nav .menu-btn{
+    margin-top: 0;
+    border: none;
+}
+
+main nav li{
+    display: inline;
+    margin-right: 15px;
+}
+.slideshow{
+    aspect-ratio: 300/150;
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+  
+}
+
+.slide, .slide img{
+    width: inherit;
+    cursor: pointer;
+    transition: scale 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.slide img{
+    scale: 1.05;
+}
+.slide{
+    position: relative;
+}
+.slide #swipe{
+    position: absolute;
+    right: 15px;
+    top: 40%;
+}
+.slide .banner-description{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+}
+.banner-description .description{
+    font-size: 30px;
+}
+.description + p{
+    font-size: 14px;
+}
+section .section-name{
+    align-items: center;
+}
+section .horizontal-scroll-holder{
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.horizontal-scroll-holder::-webkit-scrollbar,
+.horizontal-scroll-holder::-webkit-scrollbar-thumb,
+.horizontal-scroll-holder::-webkit-scrollbar-button{
+    display: none;
+}
+.horizontal-scroll-holder .horizontal-scroll{
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+.card{
+    cursor: pointer;
+    overflow: hidden;
+    width: 200px;
+    height: 250px;
+    position: relative;
+    border-radius: 20px;
+    scroll-snap-align: start;
+}
+.card::before{
+    content: " ";
+    position: absolute;
+    top:0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    z-index: 1;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 35%, rgba(0,0,0,1) 100%); 
+}
+.card img{
+    width: inherit;
+    height: inherit;
+    transition: scale 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.card .description-holder{
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: inherit;
+    text-align: center;
+    padding-bottom: 15px;
+    z-index: 10;
+}
+.card .add{
+    position: absolute; 
+    top: 0px;
+    right: 0;
+    margin: 15px;
+    z-index: 10;
+}
+
+@media(hover: hover){
+    .card:hover > img,
+    .slideshow:hover  img{
+        scale: 1.2;
+    }
+}
+
+
+/* NavBar */
+
+
+   .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    gap: 50px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .streamify-name {
+    font-weight: bold;
+  }
+  
+  .navbar-center {
+    /* flex-grow: 10; */
+    gap: 50px;
+    
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    margin-right: 10px; /* Add space between items */
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar {
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .account-logo {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .profile-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+  
